@@ -6,8 +6,7 @@ let level = 0;
 let h2 = document.querySelector('h2');
 let btnColors = ["red", "green", "yellow", "purple"];
 
-// q kae hum chahte hai pure document mai kahi par bhi key press  ho game start ho jae isiliye hum 
-// document par EventListener lagaenge keypress event
+
 document.addEventListener("keypress", function(){
     if (started == false){
         console.log("game started");
@@ -32,13 +31,9 @@ function gameFlash(btn){
 
 function levelUp(){
     userSeq = [];
-    // iss function mai hum doo kaam kar rahe honge 
-    // 1. level increase karaenge
     level++;
     h2.innerText = `Level ${level}`;
-    // 2. btn ko flash
-    // q ke abh hamai button ko flsh baar baar karwana hai isiliye hum uske leae alag se function likhenge
-    // choosing a random button and then passing that button as an argument to btnFlash function
+
     let randomIdx = Math.floor(Math.random() * 3);
     let randomColor = btnColors[randomIdx];
     let randomBtn = document.querySelector(`.${randomColor}`);
